@@ -1,0 +1,9 @@
+eval "$(starship init bash)"
+
+export CDK_DEV_STACK_PREFIX=adam
+
+alias i="npm i"
+alias pj="npx projen"
+alias t="npm t"
+alias ls="exa"
+alias cat="bat"

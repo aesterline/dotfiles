@@ -22,7 +22,12 @@ install_packages() {
 	done
 
 	sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
-	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+	# install rust and rust packages
+	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+  source $HOME/.cargo/env
+
+  cargo install --locked bat
 
 	python3 -m pip install --user pipx
 	$HOME/.local/bin/pipx install yawsso
