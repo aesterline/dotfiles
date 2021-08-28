@@ -20,14 +20,9 @@ install_packages() {
 	for pkg in $packages; do
 		sudo apt-get install -y "$pkg"
 	done
-
+	
+	curl https://get.volta.sh | bash
 	sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
-
-	# install rust and rust packages
-	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-  source $HOME/.cargo/env
-
-  cargo install --locked bat
 
 	python3 -m pip install --user pipx
 	$HOME/.local/bin/pipx install yawsso
