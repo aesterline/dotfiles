@@ -10,7 +10,6 @@ install_packages() {
 	# packages to install
 	packages="
 	awscli
-	bat
 	exa
 	jq
 	ripgrep
@@ -18,7 +17,6 @@ install_packages() {
 	fish
 	python3-venv 
 	python3-pip
-	zoxide
 	"
 	for pkg in $packages; do
 		sudo apt-get install -y "$pkg"
