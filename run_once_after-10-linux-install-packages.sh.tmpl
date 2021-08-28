@@ -5,7 +5,7 @@
 DEBIAN_FRONTEND=noninteractive
 
 install_packages() {
-	su root apt-get update
+	apt-get update
 	
 	# packages to install
 	packages="
@@ -21,7 +21,7 @@ install_packages() {
 	zoxide
 	"
 	for pkg in $packages; do
-		su root apt-get install -y "$pkg"
+		apt-get install -y "$pkg"
 	done
 
 	sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
