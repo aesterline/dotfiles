@@ -24,10 +24,11 @@ install_packages() {
 		sudo apt-get install -y "$pkg"
 	done
 
+  sudo usermod --shell /usr/bin/fish $USER
 	sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
 
 	python3 -m pip install --user pipx
-	pipx install yawsso
+	$HOME/.local/bin/pipx install yawsso
 }
 
 install_packages
