@@ -22,7 +22,7 @@ install_packages() {
 	done
 
 	sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
-	echo 'eval "$(starship init bash)"' >> $HOME/.bashrc
+	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 	python3 -m pip install --user pipx
 	$HOME/.local/bin/pipx install yawsso
