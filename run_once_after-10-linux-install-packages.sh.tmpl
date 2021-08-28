@@ -26,6 +26,8 @@ install_packages() {
 
 	python3 -m pip install --user pipx
 	$HOME/.local/bin/pipx install yawsso
+
+	echo 'source $HOME/.bash_profile' >> .bashrc
 }
 
 install_packages
