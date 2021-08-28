@@ -5,7 +5,7 @@
 DEBIAN_FRONTEND=noninteractive
 
 install_packages() {
-	apt-get update
+	su root apt-get update
 	
 	# packages to install
 	packages="
@@ -21,10 +21,10 @@ install_packages() {
 	zoxide
 	"
 	for pkg in $packages; do
-		apt-get install -y "$pkg"
+		su root apt-get install -y "$pkg"
 	done
 
-	sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+	sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
 	python3 -m pip install --user pipx
 	pipx install yawsso
 }
